@@ -2,7 +2,7 @@
 
 Applicazione aziendale per gestire **clienti, pratiche, documenti richiesti, task, scadenze e audit**, con ruoli e accesso tramite Microsoft Entra ID.
 
-> **Stato: M0 — fondamenta (solo documentazione).** Non c'è ancora codice. Il progetto è sviluppato per imparare l'intero ciclo di un'applicazione enterprise, dai requisiti al deploy.
+> **Stato: M0 — fondamenta.** C'è lo scheletro della solution, senza funzionalità. Il progetto è sviluppato per imparare l'intero ciclo di un'applicazione enterprise, dai requisiti al deploy.
 
 ## Contesto simulato
 
@@ -43,7 +43,15 @@ Meridiana Consulting S.r.l. (azienda fittizia) segue circa 120 clienti per prati
 
 ## Come eseguire il progetto
 
-Non ancora disponibile: le istruzioni arriveranno con M1.
+Requisiti: .NET SDK 10.
+
+```bash
+dotnet build FlowDesk.slnx
+dotnet test FlowDesk.slnx
+dotnet run --project src/FlowDesk.Api
+```
+
+L'API risponde su `https://localhost:7080/health/live`. Per ora espone solo il controllo di salute.
 
 ## Licenza
 
