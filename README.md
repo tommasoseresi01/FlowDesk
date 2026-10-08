@@ -53,6 +53,16 @@ dotnet run --project src/FlowDesk.Api
 
 L'API risponde su `https://localhost:7080/health/live`. Per ora espone solo il controllo di salute.
 
+Frontend (richiede Node 24):
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+Altri comandi in `web/`: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
+
 ## Licenza
 
 [MIT](LICENSE)
