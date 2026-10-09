@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FlowDesk.Api\FlowDesk.Api.csproj" />
+    <ProjectReference Include="..\..\src\FlowDesk.Web\FlowDesk.Web.csproj" />
   </ItemGroup>
 
   <ItemGroup>

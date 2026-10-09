@@ -1,9 +1,20 @@
+using FlowDesk.Application.Extensions;
+using FlowDesk.Infrastructure.Extensions;
+using FlowDesk.Web.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHealthChecks();
+builder.Host.InitSerilogFromConfiguration();
+
+builder.Services
+    .AddUI(builder.Configuration)              // Web
+    .AddApplication(builder.Configuration)     // Application
+    .AddInfrastructure(builder.Configuration); // Infrastructure
 
 var app = builder.Build();
 
-app.MapHealthChecks("/health/live");
+app.AddWebMiddleware()
+   .Run();
 
-app.Run();
+// Rende Program visibile ai test di integrazione (WebApplicationFactory).
+public partial class Program;

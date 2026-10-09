@@ -11,6 +11,18 @@ permissions:
 jobs:
   backend:
     runs-on: ubuntu-latest
+    # I test di integrazione girano su un SQL Server vero, non su un database finto.
+    # Il container vive solo per questo job: la password non protegge nulla di reale.
+    services:
+      mssql:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: "Y"
+          MSSQL_SA_PASSWORD: Ci-only-Passw0rd!
+        ports:
+          - 1433:1433
+    env:
+      FLOWDESK_TEST_CONNECTION: Server=localhost,1433;Database=FlowDesk_Test;User Id=sa;Password=Ci-only-Passw0rd!;TrustServerCertificate=True
     steps:
       - uses: actions/checkout@v4
 
@@ -27,6 +39,7 @@ jobs:
       - name: Check formatting
         run: dotnet format FlowDesk.slnx --verify-no-changes --no-restore
 
+      # Il fixture dei test riprova finché SQL Server non è pronto.
       - name: Test
         run: dotnet test FlowDesk.slnx --configuration Release --no-build
 

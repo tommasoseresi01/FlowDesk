@@ -6,13 +6,14 @@
     <File Path="global.json" />
   </Folder>
   <Folder Name="/src/">
-    <Project Path="src/FlowDesk.Api/FlowDesk.Api.csproj" />
     <Project Path="src/FlowDesk.Application/FlowDesk.Application.csproj" />
     <Project Path="src/FlowDesk.Domain/FlowDesk.Domain.csproj" />
     <Project Path="src/FlowDesk.Infrastructure/FlowDesk.Infrastructure.csproj" />
+    <Project Path="src/FlowDesk.Web/FlowDesk.Web.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="tests/FlowDesk.Api.IntegrationTests/FlowDesk.Api.IntegrationTests.csproj" />
     <Project Path="tests/FlowDesk.Architecture.Tests/FlowDesk.Architecture.Tests.csproj" />
+    <Project Path="tests/FlowDesk.IntegrationTests/FlowDesk.IntegrationTests.csproj" />
+    <Project Path="tests/FlowDesk.UnitTests/FlowDesk.UnitTests.csproj" />
   </Folder>
 </Solution>

@@ -13,6 +13,10 @@ indent_size = 2
 [*.md]
 trim_trailing_whitespace = false
 
+# Codice generato dagli strumenti EF: non si formatta a mano.
+[**/Migrations/*.cs]
+generated_code = true
+
 [*.cs]
 csharp_style_namespace_declarations = file_scoped:warning
 dotnet_sort_system_directives_first = true
