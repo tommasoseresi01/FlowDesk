@@ -1,0 +1,98 @@
+{
+  "header": {
+    "label": {
+      "toggleMenu": "Mostra o nascondi il menu",
+      "signOut": "Esci"
+    }
+  },
+  "footer": {
+    "version": "Versione"
+  },
+  "menusidebar": {
+    "label": {
+      "home": "Home",
+      "customers": "Clienti"
+    }
+  },
+  "shared": {
+    "buttons": {
+      "close": "Chiudi",
+      "save": "Salva",
+      "archive": "Archivia",
+      "refreshPage": "Ricarica la pagina"
+    },
+    "generic": {
+      "all": "Tutti",
+      "yes": "Sì",
+      "no": "No",
+      "search": "Cerca",
+      "filters": "Filtri",
+      "results": "Risultati",
+      "userModification": "Ultima modifica di",
+      "dateModification": "Data modifica",
+      "errorSummaryTitle": "Attenzione: correggi questi dati per continuare",
+      "errorLoadingData": "Errore nel caricamento dei dati",
+      "unexpectedError": "Errore imprevisto"
+    },
+    "toast": {
+      "operationSuccess": "Operazione completata.",
+      "operationError": "Impossibile eseguire l'operazione.",
+      "unexpectedError": "Si è verificato un errore."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Home"
+    },
+    "notFound": {
+      "title": "Pagina non trovata",
+      "message": "L'indirizzo richiesto non esiste in questa applicazione"
+    },
+    "noAccess": {
+      "title": "Il tuo utente non è abilitato a questa applicazione",
+      "message": "L'account {{username}} non è abilitato a questo sito.",
+      "contactSupport": "Contatta l'assistenza se hai bisogno di accedere."
+    },
+    "customersPage": {
+      "title": "Clienti",
+      "legalName": "Ragione sociale",
+      "vatNumber": "Partita IVA",
+      "contactName": "Referente",
+      "email": "Email",
+      "status": "Stato",
+      "statusActive": "Attivo",
+      "statusArchived": "Archiviato",
+      "statusFilterActive": "Attivi",
+      "statusFilterArchived": "Archiviati",
+      "createRecordModalTitle": "Nuovo cliente",
+      "editRecordModalTitle": "Modifica cliente",
+      "deleteRecordModalTitle": "Archivia cliente",
+      "restoreConfirmTitle": "Ripristina cliente",
+      "restoreConfirmQuestion": "Vuoi ripristinare il cliente {{legalName}}? Tornerà disponibile per nuove pratiche.",
+      "tooltips": {
+        "add": "Aggiungi un cliente",
+        "edit": "Modifica il cliente",
+        "delete": "Archivia il cliente",
+        "restore": "Ripristina il cliente"
+      }
+    }
+  },
+  "dialogs": {
+    "editCustomerDialog": {
+      "legalName": "Ragione sociale",
+      "legalNameMandatory": "La ragione sociale è obbligatoria",
+      "vatNumber": "Partita IVA",
+      "vatNumberMandatory": "La partita IVA è obbligatoria",
+      "vatNumberInvalid": "La partita IVA deve avere 11 cifre",
+      "contactName": "Referente",
+      "email": "Email",
+      "emailInvalid": "L'indirizzo email non è valido",
+      "phone": "Telefono"
+    },
+    "deleteCustomerDialog": {
+      "legalName": "Ragione sociale",
+      "vatNumber": "Partita IVA",
+      "confirmQuestion": "Vuoi archiviare questo cliente? Le sue pratiche restano consultabili, ma non potrà riceverne di nuove."
+    }
+  }
+}

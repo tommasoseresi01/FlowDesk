@@ -1,14 +1,143 @@
-:root {
-  font-family: system-ui, sans-serif;
+/*
+ * FontAwesome 5 è lo stesso pacchetto che AdminLTE copierebbe in admin-lte/plugins con il
+ * suo script di installazione. Qui gli script dei pacchetti sono disattivati (vedi README),
+ * quindi lo si importa direttamente dalla dipendenza dichiarata in package.json.
+ */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import 'admin-lte/dist/css/adminlte.min.css';
+@import 'react-toastify/dist/ReactToastify.min.css';
+
+/* Il contenitore che scorre è #root (vedi Main.tsx) */
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #f2f2f2 !important;
+  opacity: 1;
+}
+
+.main-header .navbar-nav .nav-item .nav-link {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Le voci di menu sono <button>: si azzera lo stile nativo per ottenere l'aspetto AdminLTE. */
+.nav-sidebar .nav-item > button.nav-link {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* ---------- Sidebar a scomparsa ---------- */
+.my-menu-not-visible .content-wrapper,
+.my-menu-not-visible .main-footer,
+.my-menu-not-visible .main-header {
+  transition: margin-left 0.3s ease-in-out;
+  margin-left: 0 !important;
+}
+
+.my-menu-visible .content-wrapper,
+.my-menu-visible .main-footer,
+.my-menu-visible .main-header {
+  transition: margin-left 0.3s ease-in-out;
+  margin-left: 250px !important;
+}
+
+.my-menu-visible .main-sidebar {
+  margin-left: 0 !important;
+}
+
+/* ---------- Modali (react-modal) ---------- */
+.ReactModal__Overlay {
+  background-color: rgba(100, 100, 100, 0.75) !important;
+  z-index: 1100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-modal-large {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  max-width: 95%;
+  max-height: 95vh;
+  overflow-y: auto;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+  outline: 0;
+}
+
+.my-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.my-modal-title {
+  margin-bottom: 0;
   line-height: 1.5;
 }
 
-body {
-  margin: 0;
+.my-modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1rem;
 }
 
-main {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+.my-modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  border-top: 1px solid #e9ecef;
+}
+
+/* ---------- Spinner ---------- */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #383636;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.loading-spinner-fullpage {
+  width: 150px;
+  height: 150px;
+  border: 30px solid #f3f3f3;
+  border-top: 30px solid #383636;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
 }
