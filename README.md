@@ -14,9 +14,9 @@ Meridiana Consulting S.r.l. (azienda fittizia) segue circa 120 clienti per prati
 |---|---|
 | Backend | ASP.NET Core Web API (.NET 10), C#, Minimal API |
 | Database | SQL Server, Entity Framework Core |
-| Frontend | React, TypeScript, Vite |
-| Identità | Microsoft Entra ID (OpenID Connect) |
-| Qualità | xUnit, Vitest, Playwright, GitHub Actions |
+| Frontend | React 18, TypeScript, Vite, AdminLTE 3 (Bootstrap 4), Material React Table |
+| Identità | Microsoft Entra ID con MSAL nel browser e token Bearer verso l'API |
+| Qualità | xUnit, Vitest, GitHub Actions |
 | Deploy (futuro) | Azure (App Service, Azure SQL, Blob Storage) |
 
 ## Documentazione
@@ -53,15 +53,29 @@ dotnet run --project src/FlowDesk.Api
 
 L'API risponde su `https://localhost:7080/health/live`. Per ora espone solo il controllo di salute.
 
-Frontend (richiede Node 24):
+Frontend (richiede Node 18 o superiore):
 
 ```bash
 cd web
-npm install
+npm install --ignore-scripts
 npm run dev
 ```
 
-Altri comandi in `web/`: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
+`--ignore-scripts` è necessario: lo script di installazione di una dipendenza indiretta di AdminLTE fallisce.
+
+Prima di avviare, crea `web/.env.local` (ignorato da git) con questi valori. Non contengono segreti: le variabili `VITE_*` finiscono in chiaro nel bundle.
+
+```dotenv
+VITE_AUTH_CLIENT_ID=<ID applicazione (client) della registrazione in Entra ID>
+VITE_AUTH_TENANT_ID=<ID directory (tenant)>
+VITE_AUTH_SCOPE=api://<ID applicazione>/access_as_user
+VITE_AUTH_REDIRECT_URI=http://localhost:5173
+VITE_API_URL=https://localhost:7080/api
+```
+
+Il frontend non contiene dati finti: dopo il login Microsoft chiama l'API. Finché il backend non espone `/users/current`, l'app mostra la pagina "utente non abilitato".
+
+Altri comandi in `web/`: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `npm run format`.
 
 ## Licenza
 

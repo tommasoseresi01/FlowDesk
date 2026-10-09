@@ -1,6 +1,6 @@
 # ADR-0008 — Autenticazione e autorizzazione con Microsoft Entra ID
 
-- **Stato**: accettato
+- **Stato**: sostituito da [ADR-0022](0022-blueprint-frontend.md) il 2026-10-09 (login con MSAL nel browser e token Bearer). Resta valido l'uso di Entra ID, del tenant personale e degli App Roles.
 - **Data**: 2026-10-08
 - **Requisiti collegati**: FR-01, FR-02, FR-03, FR-36, FR-37, NFR-01, NFR-04, NFR-05
 

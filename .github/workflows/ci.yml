@@ -44,8 +44,10 @@ jobs:
           cache: npm
           cache-dependency-path: web/package-lock.json
 
+      # Gli script di installazione dei pacchetti restano disattivati: quello di una
+      # dipendenza indiretta di admin-lte (summernote) lancia "husky" e fallisce.
       - name: Install
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Lint
         run: npm run lint
