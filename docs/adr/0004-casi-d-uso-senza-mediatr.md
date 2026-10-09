@@ -1,6 +1,6 @@
 # ADR-0004 — Casi d'uso con handler espliciti, senza MediatR
 
-- **Stato**: accettato · **Data**: 2026-10-08
+- **Stato**: sostituito da [ADR-0023](0023-template-backend.md) il 2026-10-09 (servizi applicativi al posto di handler e decorator; MediatR resta escluso) · **Data**: 2026-10-08
 
 ## Contesto
 Il livello Application orchestra casi d'uso (comandi e query) con aspetti trasversali: validazione, transazione, audit, logging.

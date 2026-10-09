@@ -1,6 +1,6 @@
 # ADR-0003 — Minimal API invece di controller MVC
 
-- **Stato**: accettato · **Data**: 2026-10-08
+- **Stato**: sostituito da [ADR-0023](0023-template-backend.md) il 2026-10-09 (controller MVC al posto delle Minimal API) · **Data**: 2026-10-08
 
 ## Contesto
 Serve un modo per esporre gli endpoint REST dell'API.

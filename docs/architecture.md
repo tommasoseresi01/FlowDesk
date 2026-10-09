@@ -2,7 +2,7 @@
 
 > Stato: **v0.1, da riallineare**. Le decisioni sono motivate negli ADR in `docs/adr/`. Il requisito di riferimento è `docs/functional-spec.md`.
 >
-> **Attenzione**: l'[ADR-0022](adr/0022-blueprint-frontend.md) ha cambiato frontend, autenticazione, contratto API e identificativi. Le sezioni 4, 7, 8, 9 e 12 di questo documento descrivono la versione precedente e vanno riscritte prima di costruire il backend.
+> **Attenzione**: l'[ADR-0022](adr/0022-blueprint-frontend.md) (frontend) e l'[ADR-0023](adr/0023-template-backend.md) (backend) hanno cambiato struttura, autenticazione, contratto API, identificativi e gestione degli errori. Le sezioni 3, 4, 7, 8, 9 e 12 di questo documento descrivono la versione precedente e vanno riscritte: per ora fanno fede i due ADR e il codice.
 
 ## 1. Vista logica
 
@@ -201,4 +201,5 @@ Ogni passo è una PR piccola che lascia `main` verde. L'infrastruttura di audit 
 | 0008 | Autenticazione con Entra ID | Accettato |
 | 0020 | Git workflow e CI | Accettato |
 | 0022 | Adozione del blueprint frontend (sostituisce 0008) | Accettato |
+| 0023 | Adozione del template backend (sostituisce 0003 e 0004) | Accettato |
 | 0009–0019, 0021 | Vedi piano: da scrivere nelle milestone indicate | Da scrivere |
